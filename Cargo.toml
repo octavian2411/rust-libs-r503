@@ -29,7 +29,7 @@ git = "https://github.com/embassy-rs/embassy.git"
 rev = "2e7a2b6"
 
 [dependencies.embassy-executor]
-features = ["task-arena-size-32768", "arch-cortex-m", "executor-thread", "executor-interrupt", "defmt"]
+features = ["task-arena-size-98304", "arch-cortex-m", "executor-thread", "executor-interrupt", "defmt"]
 git = "https://github.com/embassy-rs/embassy.git"
 rev = "2e7a2b6"
 
