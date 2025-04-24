@@ -26,22 +26,22 @@ heapless = "0.8.0"
 [dependencies.embassy-embedded-hal]
 features = ["defmt"]
 git = "https://github.com/embassy-rs/embassy.git"
-rev = "9edf5b7"
+rev = "2e7a2b6"
 
 [dependencies.embassy-executor]
 features = ["task-arena-size-32768", "arch-cortex-m", "executor-thread", "executor-interrupt", "defmt"]
 git = "https://github.com/embassy-rs/embassy.git"
-rev = "9edf5b7"
+rev = "2e7a2b6"
 
 [dependencies.embassy-time]
 features = ["defmt", "defmt-timestamp-uptime"]
 git = "https://github.com/embassy-rs/embassy.git"
-rev = "9edf5b7"
+rev = "2e7a2b6"
 
 [dependencies.embassy-rp]
-features = ["defmt", "unstable-pac", "time-driver", "critical-section-impl", "rp2040"]
+features = ["defmt", "unstable-pac", "time-driver", "critical-section-impl", "rp235xa"]
 git = "https://github.com/embassy-rs/embassy.git"
-rev = "9edf5b7"
+rev = "2e7a2b6"
 
 [profile.release]
 debug = 2
