@@ -359,6 +359,7 @@ impl<'l, T: Instance> R503<'l, T> {
 
     async fn parse_result(&mut self) -> Status {
 	info!("Parsing reply.");
+    info!("Recieved: ({:?})", self.debug_vec(&self.received, false).await);
 
 	if self.received.is_empty() {
 	    return Status::ErrorReceivePackage;
