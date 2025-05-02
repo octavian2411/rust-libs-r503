@@ -263,14 +263,20 @@ impl<'l, T: Instance> R503<'l, T> {
 
 	    return data; // Fake a success.
 	}
-
+    let mut first_bit: bool = true;
 	loop {
 	    // Read byte.
 	    match with_timeout(Duration::from_millis(timeout), self.rx.read(&mut buf)).await {
 		Ok(..) => {
 		    // Extract and save read byte.
 		    trace!("  r({:03})='{=u8:#04x}H' ({:03}D)", cnt, buf[0], buf[0]);
-		    let _ = data.push(buf[0]).unwrap();
+            if buf[0] == 0 && first_bit{
+                info!("Removed first 0");
+            }
+            else{
+                let _ = data.push(buf[0]).unwrap();
+            }
+            first_bit = false;
 		}
 		Err(..) => break // TimeoutError -> Ignore.
 	    }
