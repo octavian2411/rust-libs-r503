@@ -1760,7 +1760,7 @@ impl<'l, T: Instance> R503<'l, T> {
 	return true;
     }
 
-    pub async fn Wrapper_AuraSet_SteadyPurpe(&mut self) -> bool {
+    pub async fn Wrapper_AuraSet_SteadyPurple(&mut self) -> bool {
 	match self.AuraLedConfig(AuroraLEDControl::AlwaysOn, 0, AuroraLEDColour::Purple, 0).await {
 	    Status::CmdExecComplete => {
 		info!("Fingerprint scanner LED set to steady blue");
@@ -1927,7 +1927,7 @@ impl<'l, T: Instance> R503<'l, T> {
 			info!("No finger on sensor - retrying in {:?} seconds. Attempt: {:?}/5", 5 * attempt, attempt);
 
 			self.Wrapper_AuraSet_BlinkinRedSlow().await;
-			Timer::after_secs(5 * attempt).await;
+			Timer::after_secs(attempt).await;
 
 			attempt = attempt + 1;
 		    }
