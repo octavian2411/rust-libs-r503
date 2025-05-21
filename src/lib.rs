@@ -2016,6 +2016,8 @@ impl<'l, T: Instance> R503<'l, T> {
 		    // 3) Get the fingerprint - #2.
 		    self.Wrapper_AuraSet_BlinkinPurpleMedium().await;
 
+            Timer::after_secs(3).await;
+
 		    if self.Wrapper_Get_Fingerprint(2).await {
 			error!("Couldn't scan the finger (second time)");
 
